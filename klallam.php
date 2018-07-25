@@ -1,5 +1,5 @@
 <?php
-//klallam2.php - the php portion of the project Klallam-Lookup
+//klallam2.php - the php portion of the project Klallam-Lookup.
 $addy="Location: https://docs.google.com/spreadsheets/d/";
 $key="1_fhOXr_qdWYnZG1_N5ueNAdsusbQPrhp1uTOXU7wF_g/gviz/";
 $tq="tq?tqx=out:html&tq=";
