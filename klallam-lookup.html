@@ -1,0 +1,61 @@
+<!doctype html>
+<!--
+klallam-lookup.html
+by Louie Wilson 503-989-7966
+public domain 7-17-2018
+v.0.1 lookup searches google sheet with klallam.php, returns into an iframe
+v.0.2 fixed size of iframe 7/17
+v.0.2.1 simplified: Enter English or Klallam, don't have to pick a language
+v.0.3 Redesigned the UI - added graphics, cleaned up the table
+-->
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Klallam Lookup</title>
+   <!-- KeymanWeb script --> 
+    <script src="https://s.keyman.com/kmw/engine/2.0.473/keymanweb.js"></script>
+    <script src="https://s.keyman.com/kmw/engine/2.0.473/kmwuitoggle.js"></script>
+    <script>
+      (function(kmw) {
+        kmw.init();
+        kmw.addKeyboards('@clm');
+        kmw.addKeyboards('@eng');
+      })(tavultesoft.keymanweb);
+    </script>
+	<script>tavultesoft.keymanweb.addKeyboards('klallam2@clm');</script>
+	<script>
+		function onSubmit() {
+			var site="http://www.gluefish.com/klallam.php";
+			var lang = "?en=";
+			site += lang;
+			site += document.getElementById("inpText").value;
+    		document.getElementById("lookup").src = site;	}
+	</script>
+</head>
+<body bgcolor="#03145B" text="#EBDA0C">
+	<table>
+		<tr>
+			<td><h2>KLALLAM<br>LOOKUP</h2></td>
+			<td><img src="Screen Shot 2018-07-24 at 4.26.58 PM.png" alt="Klallam Images" align="left" width="241" height="68"/></td></tr>
+		<tr>
+			<td colspan="2"><i>Enter the word and click the Submit button to search for it.</i></td></tr>
+		<tr>
+			<td align="right" width="144">Word:</td>
+			<td width="809">
+				<input type="text" id="inpText" placeholder="Type something here" style="font-size: 16px;"/></td></tr>
+		<tr>
+			<td></td>
+			<td><button id="submitButton" type="submit" onClick="onSubmit()">Submit</button></td></tr>
+	</table>
+	<div style="height:80%; width:953px">
+		<iframe id="lookup" src="./klinst.html" style="width:100%; height: 74vh;" ></iframe></div>
+	<a href="http://www.reliablecounter.com" 
+	   target="_blank">
+		<img src="https://www.reliablecounter.com/count.php?page=gluefish.com/klallam-lookup.html&digit=style/plain/30/&reloads=0" 
+			 alt="" title="" border="0"></a><br />
+		<a href="http://belfageo.be/devis" 
+			target="_blank" 
+			style="font-family: Geneva, Arial; font-size: 9px; color: #330010; text-decoration: none;">devis géomètre</a>
+	<label style="font-size: 10px">www.gluefish.com 2018</label>
+</body>
+</html>
