@@ -1,0 +1,34 @@
+Name: Klallam Development Log 
+Author: Louie Wilson 503-989-7966
+Date Created: 2/12/2020
+
+Main File: klallam-lookup.html
+by Louie Wilson 503-989-7966
+public domain 7-17-2018
+Versions: 
+    v.0.1 lookup searches google sheet with klallam.php, returns into an iframe
+    v.0.2 fixed size of iframe 7/17
+    v.0.2.1 simplified: Enter English or Klallam, don't have to pick a language
+    v.0.3 (8/4/18 lw) Added label pickers "WOTD", etc; added onblur to input field
+    v.0.4 (2/12/20 lw) Added (c)2020 Louie Syehum to bottom left
+        Created "KlallamDevelopment.log" to capture updates and edits
+    v.0.5 (2/13/20 lw) Put Lushootseed into the keymanweb selection
+          Replaced the 4KlallamTribes.png with NWTribes.png  
+          Changed headline to "KLALLAM, LUSHOOTSEED LOOKUPS"
+          Added "LU:" to lookup links
+          Link for access to database (read-only unless user has privileges on db)
+
+Data:
+    2/12/20 Spreadsheet updated
+        Split Klallam and English on ~2000 rows
+        Added page 7 of Siastenu
+
+Enhancement plans:
+    v.0.6 Add language selector buttons for search by
+        Do searches based on filters (or none)
+    v.0.7 Do login for write access to database    
+    ... develop github environment
+    
+Bugs:        
+
+        
