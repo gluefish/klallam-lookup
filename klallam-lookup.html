@@ -9,6 +9,7 @@ v.0.2.1 simplified: Enter English or Klallam, don't have to pick a language
 v.0.3 (8/4/18 lw) Added label pickers "WOTD", etc; added onblur to input field
 v.0.4 (2/12/20 lw) Added (c)2020 Louie Syehum to bottom left
 		Created "KlallamDevelopment.log" to capture updates and edits
+v.0.5 (8/12/20) Cleaned up (simplified) main page		
 -->
 <html lang="en">
 <head>
@@ -24,11 +25,12 @@ v.0.4 (2/12/20 lw) Added (c)2020 Louie Syehum to bottom left
         	kmw.addKeyboards('@clm');
         	kmw.addKeyboards('@eng');
         	kmw.addKeyboards('@lut');
-      		}
+  		    kmw.addKeyboards('@str');
+    		}
 		)(tavultesoft.keymanweb);
-    
 		tavultesoft.keymanweb.addKeyboards('klallam2@clm');
 		tavultesoft.keymanweb.addkeyboards('lushootseed@lut');
+		tavultesoft.keymanweb.addkeyboards('fv_senkoten@str');
 		tavultesoft.keymanweb.addKeyboards('');
 	
 		function onSubmit() {
@@ -50,50 +52,73 @@ v.0.4 (2/12/20 lw) Added (c)2020 Louie Syehum to bottom left
 </head>
 	
 <body bgcolor="#03145B" text="#EBDA0C">
+	<table width="100%">
+		<tr>
+			<td><h2>Straits Salish Lookups: S'Klallam, Lushootseed, Saanich</h2></td>
+			<td><a href="http://bit.ly/gf-doc-ho7b" target="_blank" style="color:aqua">HO7B Commentary</a></td>
+			<td><a href="https://docs.google.com/spreadsheets/d/1Df111tDKCBDVku_l_nbUp-ACOI8MJJE2MzfANXlJDsA/edit#gid=0" target="_blank" style="color:aqua">ɬəmtiyáčaʔ</a></td>
+		</tr>
+	</table>
+	<table width="100%">
+		<tr>
+			<td style="color:white"><b>SOURCES:</b></td>			
+			<td><label onClick="clickLabel('WOTD');"><b>WOTD</b> - Klallam Word of the Day</label></br>
+			<label onClick="clickLabel('');">Complete Listing (default)</label></td>
+
+			<td><label onClick="clickLabel('KD');"><b>KD</b> - Klallam Dictionary</label><br>
+				<label onClick="clickLabel('KD Prefixes');">KD Prefixes</label></br>
+				<label onClick="clickLabel('KD Suffixes');">KD Suffixes</label></td>
+
+
+			<td><label onClick="clickLabel('KG');"><b>KG</b> - Klallam Grammar</label><br>
+				<label onClick="clickLabel('TN ');"><b>TN</b> - Klallam Names</label></td>
+
+			<td><label onClick="clickLabel('LU');"><b>LU</b> - Lushootseed</label><br>
+				<label onClick="clickLabel('LU Prefixes');">Lushootseed Prefixes</label><br>
+				<label onClick="clickLabel('LU Suffixes');">Lushootseed Suffixes</label></td>
+
+			<td><label onClick="clickLabel('Chinuk');">Chinuk Wawa</label></td>
+
+			
+		</tr>
+	</table>
+
 	<table>
 		<tr>
-			<td><h2>KLALLAM, LUSHOOTSEED LOOKUPS</h2></td>
-<!---			<td><img src="4KlallamTribes.png" alt="Klallam Images" align="left" width="241" height="68"/></td>-->
-			<td><img src="NWTribes.png"  width="300"/></td0>
-			<!--<td>Sort by:<br>
+<!--- FUTURE: Figure out how to get the radios working with the sorting 
+ 				<td><img src="4KlallamTribes.png" alt="Klallam Images" align="left" width="241" height="68"/></td>-->
+			<!--<td><img src="NWTribes.png"  width="300"/></td0>
+			<td>Sort by:<br>
 				<input type="radio" id="sortby" name="sortby" value="A" checked>English<br>
 				<input type="radio" id="sortby" name="sortby" value="B">S'Klallam<br>
 				<input type="radio" id="sortby" name="sortby" value="C>">Lushootseed	
-			</td>-->
-			<td >
-				<label onClick="clickLabel('WOTD');">WOTD - Klallam Word of the Day</label><br>
-				<label onClick="clickLabel('KD');">KD - Klallam Dictionary</label><br>
-				<label onClick="clickLabel('KG');">KG - Klallam Grammar</label><br>
-				<label onClick="clickLabel('TN');">TN - Klallam Names</label><br>
-				<label onClick="clickLabel('LU');">LU;</label>
+			</td>
+-->
+			<td ></td><td>
+
 			</td>		
 		</tr>
+
 		<tr>
-			<td colspan="2"><i>Enter the word and click the Submit button to search for it.</i></td>
-		</tr>
-		<tr>
-			<td align="right" width="144">Word:</td>
-			<td width="809">
+			<td width="600">
 				<input type="text" 
 					id="inpText" 
-					placeholder="Type something here" 
+					placeholder="Word to search for" 
 					style="font-size: 16px;"
-					onblur="clickSubmit();"></td>	
-				
+					onblur="clickSubmit();">
+				</input>
+			</td>			
+			<td align="left"><button id="submitButton" type="submit" onClick="onSubmit()">Submit</button></td>
 		</tr>
-		<tr>
-			<td></td>
-			<td><button id="submitButton" type="submit" onClick="onSubmit()">Submit</button></td>
-			<td><a href="http://bit.ly/gf-doc-ho7b" target="_blank" style="color:aqua">HO7B Commentary</a><br>
-				<a href="https://docs.google.com/spreadsheets/d/1Df111tDKCBDVku_l_nbUp-ACOI8MJJE2MzfANXlJDsA/edit#gid=0" target="_blank" style="color:aqua">ɬəmtiyáčaʔ</a> </td></tr>
 	</table>
-	<div style="height:100%; width:100%">
-		<iframe id="lookup" src="./KLinst.html" style="width:100%; height: 74vh;" ></iframe>
+	<div style="height:20%; width:100%">
+		<iframe id="lookup" src="./KLinst.html" style="width:100%; height: 62vh;" ></iframe>
+		<!--<iframe id="lookup" style="width:100%; height: 74vh;" ></iframe>-->
 	</div>
 
 	<table width="100%">
 		<tr>
-			<td>(c)2020 Louie Syehum</td>
+			<td>(c)2020 Louie Syə́húm</td>
 			<td align="right"><img src="syehum.gif" alt="syəhúm" /></td>
 		</tr>
 	</table>

@@ -5,6 +5,11 @@ Date Created: 2/12/2020
 Main File: klallam-lookup.html
 by Louie Wilson 503-989-7966
 public domain 7-17-2018
+
+Development: Dev versions are on the Raspberry Pi, running on shared AFS Folder:
+    /var/www/html/klallam
+    Development is done in a vnc from my mac pro "Gallifrey" with VS Code editor.
+
 Versions: 
     v.0.1 lookup searches google sheet with klallam.php, returns into an iframe
     v.0.2 fixed size of iframe 7/17
@@ -16,7 +21,9 @@ Versions:
           Replaced the 4KlallamTribes.png with NWTribes.png  
           Changed headline to "KLALLAM, LUSHOOTSEED LOOKUPS"
           Added "LU:" to lookup links
-          Link for access to database (read-only unless user has privileges on db)
+    v.0.6 (7/20/20 lw) Changed header to SAANICH from SENKOTEN
+    v.0.7 (8/12/20 lw) Removed extraneous stuff from main page
+          Rearranged the shortcuts, expanded LU to LU - Lushootseed  
 
 Data:
     2/12/20 Spreadsheet updated
@@ -27,8 +34,7 @@ Enhancement plans:
     v.0.6 Add language selector buttons for search by
         Do searches based on filters (or none)
     v.0.7 Do login for write access to database    
-    ... develop github environment
-    
+
 Bugs:        
 
         
